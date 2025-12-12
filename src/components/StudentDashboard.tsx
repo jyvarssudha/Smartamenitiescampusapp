@@ -89,10 +89,10 @@ export function StudentDashboard({ user }: { user: User }) {
 
   if (selectedService) {
     return (
-      <div className="min-h-screen bg-gray-50 p-8">
+      <div className="min-h-screen bg-slate-50 p-8">
         <button
           onClick={() => setSelectedService(null)}
-          className="flex items-center gap-2 text-gray-600 hover:text-gray-900 mb-6"
+          className="flex items-center gap-2 text-slate-600 hover:text-slate-900 mb-6 transition-colors"
         >
           <ArrowLeft className="w-5 h-5" />
           Back to Services
@@ -113,13 +113,13 @@ export function StudentDashboard({ user }: { user: User }) {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 flex items-center justify-center p-4">
       <div className="w-full max-w-6xl">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-gray-900 mb-2">Welcome, {user.name}!</h1>
-          <p className="text-gray-600">Select a service to get started</p>
-          <p className="text-sm text-gray-500 mt-1">Register Number: {user.id}</p>
+          <h1 className="text-slate-900 mb-2">Welcome, {user.name}!</h1>
+          <p className="text-slate-600">Select a service to get started</p>
+          <p className="text-sm text-slate-500 mt-1">Register Number: {user.id}</p>
         </div>
 
         {/* Service Cards Grid */}
@@ -135,40 +135,40 @@ export function StudentDashboard({ user }: { user: User }) {
             icon={<Trophy className="w-12 h-12" />}
             title="Indoor Stadium"
             description="Book sports facilities and equipment"
-            color="green"
+            color="cyan"
             onClick={() => setSelectedService('indoor-stadium')}
           />
           <ServiceCard
             icon={<UserCheck className="w-12 h-12" />}
             title="Faculty Access"
             description="Connect with professors and advisors"
-            color="purple"
+            color="indigo"
             onClick={() => setSelectedService('faculty-access')}
           />
           <ServiceCard
             icon={<School className="w-12 h-12" />}
             title="Classroom"
             description="Reserve classrooms for group activities"
-            color="orange"
+            color="violet"
             onClick={() => setSelectedService('classroom')}
           />
           <ServiceCard
             icon={<Map className="w-12 h-12" />}
             title="Campus Map"
             description="Explore the campus layout and find your way around"
-            color="red"
+            color="teal"
             onClick={() => setSelectedService('campus-map')}
           />
         </div>
 
         {/* Quick Stats */}
-        <div className="mt-12 bg-white rounded-2xl border border-gray-200 p-6">
-          <h3 className="text-gray-900 mb-4">Quick Overview</h3>
+        <div className="mt-12 bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+          <h3 className="text-slate-900 mb-4">Quick Overview</h3>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <StatBox label="Active Bookings" value="2" color="blue" />
-            <StatBox label="Books Borrowed" value="3" color="green" />
-            <StatBox label="Upcoming Appointments" value="1" color="purple" />
-            <StatBox label="Study Hours" value="12h" color="orange" />
+            <StatBox label="Books Borrowed" value="3" color="cyan" />
+            <StatBox label="Upcoming Appointments" value="1" color="indigo" />
+            <StatBox label="Study Hours" value="12h" color="teal" />
           </div>
         </div>
       </div>
@@ -186,39 +186,39 @@ function ServiceCard({
   icon: React.ReactNode;
   title: string;
   description: string;
-  color: 'blue' | 'green' | 'purple' | 'orange' | 'red';
+  color: 'blue' | 'cyan' | 'indigo' | 'violet' | 'teal';
   onClick: () => void;
 }) {
   const colorClasses = {
     blue: {
-      bg: 'from-blue-500 to-blue-600',
+      bg: 'from-blue-600 to-blue-700',
       iconBg: 'bg-blue-100',
-      iconColor: 'text-blue-600',
+      iconColor: 'text-blue-700',
       shadow: 'hover:shadow-blue-200',
     },
-    green: {
-      bg: 'from-green-500 to-green-600',
-      iconBg: 'bg-green-100',
-      iconColor: 'text-green-600',
-      shadow: 'hover:shadow-green-200',
+    cyan: {
+      bg: 'from-cyan-600 to-cyan-700',
+      iconBg: 'bg-cyan-100',
+      iconColor: 'text-cyan-700',
+      shadow: 'hover:shadow-cyan-200',
     },
-    purple: {
-      bg: 'from-purple-500 to-purple-600',
-      iconBg: 'bg-purple-100',
-      iconColor: 'text-purple-600',
-      shadow: 'hover:shadow-purple-200',
+    indigo: {
+      bg: 'from-indigo-600 to-indigo-700',
+      iconBg: 'bg-indigo-100',
+      iconColor: 'text-indigo-700',
+      shadow: 'hover:shadow-indigo-200',
     },
-    orange: {
-      bg: 'from-orange-500 to-orange-600',
-      iconBg: 'bg-orange-100',
-      iconColor: 'text-orange-600',
-      shadow: 'hover:shadow-orange-200',
+    violet: {
+      bg: 'from-violet-600 to-violet-700',
+      iconBg: 'bg-violet-100',
+      iconColor: 'text-violet-700',
+      shadow: 'hover:shadow-violet-200',
     },
-    red: {
-      bg: 'from-red-500 to-red-600',
-      iconBg: 'bg-red-100',
-      iconColor: 'text-red-600',
-      shadow: 'hover:shadow-red-200',
+    teal: {
+      bg: 'from-teal-600 to-teal-700',
+      iconBg: 'bg-teal-100',
+      iconColor: 'text-teal-700',
+      shadow: 'hover:shadow-teal-200',
     },
   };
 
@@ -227,7 +227,7 @@ function ServiceCard({
   return (
     <button
       onClick={onClick}
-      className={`relative overflow-hidden bg-white rounded-2xl border border-gray-200 p-8 text-left transition-all duration-300 hover:scale-105 hover:shadow-2xl ${colors.shadow} group`}
+      className={`relative overflow-hidden bg-white rounded-2xl border border-slate-200 p-8 text-left transition-all duration-300 hover:scale-105 hover:shadow-2xl ${colors.shadow} group`}
     >
       {/* Gradient Background Effect */}
       <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${colors.bg} opacity-10 rounded-bl-full transition-all group-hover:opacity-20`}></div>
@@ -262,13 +262,13 @@ function StatBox({
 }: {
   label: string;
   value: string;
-  color: 'blue' | 'green' | 'purple' | 'orange';
+  color: 'blue' | 'cyan' | 'indigo' | 'teal';
 }) {
   const colorClasses = {
     blue: 'bg-blue-50 text-blue-600',
-    green: 'bg-green-50 text-green-600',
-    purple: 'bg-purple-50 text-purple-600',
-    orange: 'bg-orange-50 text-orange-600',
+    cyan: 'bg-cyan-50 text-cyan-600',
+    indigo: 'bg-indigo-50 text-indigo-600',
+    teal: 'bg-teal-50 text-teal-600',
   };
 
   return (
